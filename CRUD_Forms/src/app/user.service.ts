@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { serverConfig } from './app.config';
+import { environment } from './app.config';
 
 
 export interface User {
@@ -14,7 +14,7 @@ export interface User {
   providedIn: 'root'
 })
 export class FormService {
-  private apiUrl = serverConfig.apiUrl;
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

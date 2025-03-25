@@ -6,6 +6,7 @@ import { FormService } from '../user.service';
 
 @Component({
   selector: 'app-user-edit',
+  standalone: true,
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.sass'
 })
