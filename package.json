@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@angular/animations": "github:angular/animations-builds",
+    "@angular/cdk": "github:angular/cdk-builds",
+    "@angular/material": "github:angular/material2-builds"
+  }
+}
