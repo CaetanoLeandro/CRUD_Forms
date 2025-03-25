@@ -1,27 +1,22 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 import { UserListComponent } from './user-list/user-list.component';
-
-export const routes: Routes = [
-  { path: '', component: UserListComponent },
-  { path: 'edit/:id', component: UserEditComponent },
-  { path: 'new', component: UserEditComponent },
-];
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, UserEditComponent, UserListComponent],
+  declarations: [
+    AppComponent,
+    UserListComponent,
+    UserEditComponent
+  ],
   imports: [
     BrowserModule,
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes) 
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
