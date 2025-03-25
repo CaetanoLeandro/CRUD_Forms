@@ -1,8 +1,9 @@
-// import { NgModule } from '@angular/core';
-// import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
-// @NgModule({
-//   imports: [RouterModule],
-
-// })
-// export class AppModule {}
+@NgModule({
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+})
+export class AppModule {}
