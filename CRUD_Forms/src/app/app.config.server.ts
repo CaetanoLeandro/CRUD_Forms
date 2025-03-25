@@ -1,6 +1,11 @@
-export const serverConfig = {
-  apiUrl: 'http://localhost:3000',
-  useMockServer: true, 
-  logRequests: true,
-  providers: [],
+import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { provideServerRendering } from '@angular/platform-server';
+import { appConfig } from './app.config';
+
+const serverConfig: ApplicationConfig = {
+  providers: [
+    provideServerRendering()
+  ]
 };
+
+export const config = mergeApplicationConfig(appConfig, serverConfig);
