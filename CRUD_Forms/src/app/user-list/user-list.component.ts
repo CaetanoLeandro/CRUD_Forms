@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormService, User } from '../user.service';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { FormService, User } from '../user.service';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.sass',
 })
