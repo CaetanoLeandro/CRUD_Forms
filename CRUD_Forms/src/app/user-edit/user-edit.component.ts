@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -12,17 +12,17 @@ import { FormService } from '../user.service';
 @Component({
   selector: 'app-user-edit',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.sass',
 })
 export class UserEditComponent implements OnInit {
+  private route = inject(ActivatedRoute);
   form!: FormGroup;
   id!: number;
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     private formService: FormService
   ) {}
