@@ -17,8 +17,14 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
+  // ➕ Adicionando middleware para JSON
+  server.use(express.json());
+
+  // ➕ Rota de API para /api/users
+  server.get('/api/users', (req, res) => {
+    res.json([{ id: 1, name: "Usuário Exemplo" }]);
+  });
+
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
